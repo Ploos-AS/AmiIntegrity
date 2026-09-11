@@ -1,0 +1,14 @@
+format=0
+profile=system
+created=UNSET
+hashes=crc32,sha256
+
+[entry]
+path=S:Startup-Sequence
+type=file
+size=0
+datestamp=UNSET
+protection=----rwed
+comment=
+crc32=UNSET
+sha256=UNSET

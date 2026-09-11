@@ -6,6 +6,8 @@ AmiIntegrity is a classic-Amiga file-integrity monitor. It should be useful on m
 
 Integrity checks must distinguish content changes from metadata changes where practical. Baselines are evidence and should never be silently rewritten after a mismatch.
 
+ARexx support is a project requirement. The integrity engine and CLI must remain fully usable without RexxMast, while systems with RexxMast should expose a documented `AMIINTEGRITY` public port. Common commands should include `VERSION`, `STATUS` and `HELP`; integrity operations should become scriptable as their CLI equivalents mature. ARexx checks must never silently approve or rewrite a changed baseline.
+
 ## M0 — Foundation
 
 Acceptance criteria:
@@ -16,6 +18,7 @@ Acceptance criteria:
 - Baseline format draft documented.
 - Example monitoring profile present.
 - Example baseline record present.
+- ARexx is recorded as a required automation interface, while integrity operation remains independent of RexxMast.
 - Host-side `tools/check_m0.py` validates the repository contract.
 - M0 makes no claim that hashing or recursive scanning is implemented.
 
@@ -56,13 +59,15 @@ Provide concise console output plus a stable machine-readable representation sui
 
 Protect baseline replacement, detect corrupt/truncated baseline files, handle inaccessible files explicitly and bound memory/path usage.
 
-## M7 — Integration
+## M7 — ARexx and integration
 
-Add ARexx where useful and optional integration hooks for AmiGuard and AmiForensics. Integrations must remain optional.
+Implement and qualify the required `AMIINTEGRITY` ARexx port. At minimum expose `VERSION`, `STATUS` and `HELP`, plus appropriate integrity operations such as `INIT`, `CHECK`, `DIFF` and report/status retrieval. Baseline replacement/update must remain an explicit operation and must never happen as a side effect of `CHECK` or `DIFF`. Document arguments, results and return codes.
+
+RexxMast is optional: CLI scanning and verification must continue to work without it. Add optional integration hooks for AmiGuard and AmiForensics; integrations must remain optional.
 
 ## M8 — Runtime qualification
 
-Qualify supported AmigaOS/CPU combinations under emulation and selected real hardware.
+Qualify supported AmigaOS/CPU combinations under emulation and selected real hardware. Qualification should cover both ARexx operation with RexxMast and ordinary CLI operation without RexxMast.
 
 ## M9 — Release
 

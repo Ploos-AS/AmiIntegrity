@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AmiIntegrity M0 repository qualification gate."""
+"""HashGuard M0 repository qualification gate."""
 
 from pathlib import Path
 import sys

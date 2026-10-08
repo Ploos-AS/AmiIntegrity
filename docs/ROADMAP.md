@@ -1,12 +1,12 @@
-# AmiIntegrity Roadmap
+# HashGuard Roadmap
 
 ## Design principles
 
-AmiIntegrity is a classic-Amiga file-integrity monitor. It should be useful on modest real hardware, so the core must avoid heavyweight runtime requirements and keep baseline/report formats transparent.
+HashGuard is a cross-platform file-integrity monitor, initially targeting classic AmigaOS. It should be useful on modest real hardware, so the core must avoid heavyweight runtime requirements and keep baseline/report formats transparent.
 
 Integrity checks must distinguish content changes from metadata changes where practical. Baselines are evidence and should never be silently rewritten after a mismatch.
 
-ARexx support is a project requirement. The integrity engine and CLI must remain fully usable without RexxMast, while systems with RexxMast should expose a documented `AMIINTEGRITY` public port. Common commands should include `VERSION`, `STATUS` and `HELP`; integrity operations should become scriptable as their CLI equivalents mature. ARexx checks must never silently approve or rewrite a changed baseline.
+ARexx support is a project requirement. The integrity engine and CLI must remain fully usable without RexxMast, while systems with RexxMast should expose a documented `HASHGUARD` public port. Common commands should include `VERSION`, `STATUS` and `HELP`; integrity operations should become scriptable as their CLI equivalents mature. ARexx checks must never silently approve or rewrite a changed baseline.
 
 ## M0 — Foundation
 
@@ -61,7 +61,7 @@ Protect baseline replacement, detect corrupt/truncated baseline files, handle in
 
 ## M7 — ARexx and integration
 
-Implement and qualify the required `AMIINTEGRITY` ARexx port. At minimum expose `VERSION`, `STATUS` and `HELP`, plus appropriate integrity operations such as `INIT`, `CHECK`, `DIFF` and report/status retrieval. Baseline replacement/update must remain an explicit operation and must never happen as a side effect of `CHECK` or `DIFF`. Document arguments, results and return codes.
+Implement and qualify the required `HASHGUARD` ARexx port. At minimum expose `VERSION`, `STATUS` and `HELP`, plus appropriate integrity operations such as `INIT`, `CHECK`, `DIFF` and report/status retrieval. Baseline replacement/update must remain an explicit operation and must never happen as a side effect of `CHECK` or `DIFF`. Document arguments, results and return codes.
 
 RexxMast is optional: CLI scanning and verification must continue to work without it. Add optional integration hooks for AmiGuard and AmiForensics; integrations must remain optional.
 

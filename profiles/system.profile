@@ -1,4 +1,4 @@
-# AmiIntegrity profile format v0
+# HashGuard profile format v0
 name=system
 description=Core classic AmigaOS system integrity profile
 include=S:Startup-Sequence

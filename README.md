@@ -1,8 +1,8 @@
-# AmiIntegrity
+# HashGuard
 
-AmiIntegrity is a lightweight file-integrity monitoring and baseline verification tool for classic AmigaOS.
+HashGuard is a lightweight, cross-platform file-integrity monitoring and baseline verification tool. Classic AmigaOS is the first implementation target; Atari TOS, other Amiga-family systems, AxiomicaOS and Haiku are planned.
 
-The project is inspired by host-integrity tools such as Tripwire, but is designed specifically for classic Amiga systems and their filesystem, startup and protection-bit conventions.
+The project is inspired by host-integrity tools such as Tripwire, with a portable core and platform adapters that preserve classic Amiga filesystem, startup and protection-bit conventions where relevant.
 
 ## Project goals
 
@@ -39,12 +39,12 @@ The exact default set will be qualified before release and must remain configura
 The exact CLI is not frozen yet. The intended model is:
 
 ```text
-AmiIntegrity version
-AmiIntegrity init <path|profile>
-AmiIntegrity check <path|profile>
-AmiIntegrity verify <path>
-AmiIntegrity diff
-AmiIntegrity status
+HashGuard version
+HashGuard init <path|profile>
+HashGuard check <path|profile>
+HashGuard verify <path>
+HashGuard diff
+HashGuard status
 ```
 
 A later release may also provide shorter aliases, but M0 does not freeze those names.
@@ -67,7 +67,7 @@ M0 defines the format contract only. Hashing and filesystem scanning are impleme
 ## Repository layout
 
 ```text
-src/                 Native Amiga client source
+src/                 Native client source
 include/             Headers
 docs/                Design and milestone documentation
 profiles/            Monitoring profiles
@@ -88,7 +88,7 @@ tools/               Host-side qualification/development tools
 - **M8 — Runtime qualification:** emulator/real-Amiga qualification across supported OS/CPU profiles.
 - **M9 — Release:** documentation, packaging and first public release.
 
-See [docs/ROADMAP.md](docs/ROADMAP.md).
+Future native targets include AmigaOS 4.x, MorphOS, AROS, AxiomicaOS, Haiku and Atari TOS/EmuTOS/FreeMiNT; see [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## M0 status
 

@@ -1,4 +1,4 @@
-# AmiIntegrity baseline format — draft v0
+# HashGuard baseline format — draft v0
 
 M0 defines a simple text representation intended to be easy to parse on classic AmigaOS and easy to inspect manually.
 
@@ -36,7 +36,7 @@ Candidate keys:
 - `path`: Amiga path exactly as recorded.
 - `type`: initially `file` or `dir`.
 - `size`: byte size for files.
-- `datestamp`: canonical AmiIntegrity representation of the Amiga datestamp.
+- `datestamp`: canonical representation of the Amiga datestamp in the AmigaOS profile.
 - `protection`: protection-bit representation.
 - `comment`: filesystem comment when available.
 - `crc32`: hexadecimal CRC32.

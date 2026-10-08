@@ -13,3 +13,5 @@ jobs:
         run: python3 tools/check_m0.py
       - name: Test portable CRC32 (M1)
         run: sh tests/run_crc32.sh
+      - name: Test portable SHA-256 (M1)
+        run: sh tests/run_sha256.sh
